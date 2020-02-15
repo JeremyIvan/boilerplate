@@ -5,12 +5,14 @@ const cors = require('cors')
 const httpErrors = require('http-errors')
 
 const config = require('./config')
+const databaseConnection = require('./database')
 
 const sampleRouter = require('./routes/sampleRouter')
 
 const app = express()
 
-const setupAndStartServer = () => {
+const setupAndStartServer = async () => {
+  await databaseConnection()
   app.use(logger('dev'))
   app.use(bodyParser.json())
   app.use(cors())
