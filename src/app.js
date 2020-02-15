@@ -3,10 +3,8 @@ const logger = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const httpErrors = require('http-errors')
-
 const config = require('./config')
 const databaseConnection = require('./database')
-
 const sampleRouter = require('./routes/sampleRouter')
 
 const app = express()
